@@ -4,7 +4,7 @@ Given the following graph:
 A --|
     |-- D --|
 B --|       |-- E|
-    |       |		 |
+    |       |    |
 C --|-------|    |----|G
 F --|-------|----|
 Each node is a async job, illustrated by setTimeout.
