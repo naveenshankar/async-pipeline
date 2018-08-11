@@ -23,7 +23,7 @@ var tasksInProgress = [];
 var tasksCompleted = [];
 
 var createTaskPromise = function(taskName,time,dependency){
-		var task = function(){
+    var task = function(){
         tasksCompleted.push(taskName);
         tasksInProgress.splice(tasksInProgress.indexOf(taskName),1);
         console.log('tasksCompleted',Object.assign({},tasksCompleted));
@@ -65,10 +65,10 @@ var taskG = createTaskPromise('TaskG',1000,[taskF,taskE]);
 //SOLUTION #1
 //console.log(Promise.all([Promise.all([taskA.func(),taskB.func()]).then(function(val){console.log(taskD.func());return val}),taskC.func()]).then(function(val){console.log(taskE.func());return val}));
 
-//await Promise.all(																						,e)
-//						await Promise.all(														,c)
-//            									(                       ,d;)
-//                               await Promise.all[a,b];
+//await Promise.all(						     ,e)
+//		    await Promise.all(				  ,c)
+//            			      (                       ,d;)
+//                                     await Promise.all(a,b);
 
 taskE.execute();
 //taskG.execute();
